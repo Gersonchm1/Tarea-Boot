@@ -1,46 +1,94 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestión de Héroes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
 
+<div class="container my-5 p-4 bg-white rounded shadow">
+  <h5 class="border-bottom pb-2 mb-4">Mis Heroes</h5>
   
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
-
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
-    
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <div class="container my-5 p-4   shadow">
-        <h5 class="border-bottom pb2 mb-4" > Mis Heroes</h5>
-
-        <h4 class="mb-4"> Gestion de Heroes</h4>
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="nombrePersonaje" class="form-label">Nombre Personaje</label>
-                    <input type="text" class="form-control" id="NombrePersonaje">
-
-                    
-                  </div>
-                  <div class="col-md-6">
-                    <label for="nombrePersonaje" class="form-label">Nombre Personaje</label>
-                    <input type="text" class="form-control" id="NombrePersonaje">
-                    
-                    
-                  </div>
-
-            </div>
-        </form>
-
+  <h4 class="mb-4">Gestion de Heroes</h4>
+  
+  <form>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="nombrePersonaje" class="form-label">Nombre Personaje</label>
+        <input type="text" class="form-control" id="nombrePersonaje">
+      </div>
+      <div class="col-md-6">
+        <label for="nombreActor" class="form-label">Nombre Actor</label>
+        <input type="text" class="form-control" id="nombreActor">
+      </div>
     </div>
     
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="edadActor" class="form-label">Edad Actor</label>
+        <input type="number" class="form-control" id="edadActor">
+      </div>
+      <div class="col-md-6">
+        <label for="ubicacion" class="form-label">Ubicacion</label>
+        <input type="text" class="form-control" id="ubicacion">
+        <small class="text-muted">Nombre de la ciudad de origen</small>
+      </div>
+    </div>
     
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="poster" class="form-label">Poster</label>
+        <input type="text" class="form-control" id="poster">
+      </div>
+      <div class="col-md-6">
+        <label for="fechaUbicacion" class="form-label">Ubicacion</label>
+        <input type="date" class="form-control" id="fechaUbicacion">
+      </div>
+    </div>
     
-  <body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <div class="mb-4">
+      <label for="productora" class="form-label">Productora</label>
+      <select class="form-select" id="productora">
+        <option selected>Marvel</option>
+        <option>DComics</option>
+        
+      </select>
+    </div>
+
+    <!-- Registro de trajes oculto al inicio -->
+    <div id="registroTrajes" class="card border-primary mb-4 d-none">
+      <div class="card-header bg-white">
+        <strong>Registro de Trajes</strong>
+      </div>
+      <div class="card-body text-primary">
+        <h5 class="card-title">Trajes del personaje</h5>
+        <p class="card-text">En esta sección podrá registrar los nombres de los trajes usados por el actor en cada una de las películas.</p>
+        <button type="button" class="btn btn-warning btn-sm">
+          <strong>+</strong>
+        </button>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="d-flex gap-2">
+      <button type="button" class="btn btn-dark" id="nuevoHeroeBtn">Nuevo Heroe</button>
+      <button type="submit" class="btn btn-primary">Guardar Heroe</button>
+      <button type="reset" class="btn btn-danger">Cancelar</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  const nuevoHeroeBtn = document.getElementById('nuevoHeroeBtn');
+  const registroTrajes = document.getElementById('registroTrajes');
+
+  nuevoHeroeBtn.addEventListener('click', () => {
+    registroTrajes.classList.remove('d-none');
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
