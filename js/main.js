@@ -2,12 +2,14 @@ const nuevoHeroeBtn = document.getElementById('nuevoHeroeBtn');
   const registroTrajes = document.getElementById('registroTrajes');
   const btnAgregarTraje = document.getElementById('btnAgregarTraje');
   const contenedorTrajes = document.getElementById('contenedor-trajes gap-2');
-
-  // Mostrar la sección de trajes al dar clic en Nuevo Héroe
-  nuevoHeroeBtn.addEventListener('click', () => {
-    registroTrajes.classList.remove('d-none');
+  
+  nuevoHeroeBtn.addEventListener('click',()=>{
+    registroTrajes.classList.remove('d-none')
   });
+  
 
+  
+  
   function crearCampoTraje() {
     const div = document.createElement('div');
     div.classList.add('input-group', 'mb-2');
@@ -21,6 +23,7 @@ const nuevoHeroeBtn = document.getElementById('nuevoHeroeBtn');
   
     contenedorTrajes.appendChild(div);
   }
+  
   
   // Función para eliminar el campo
   function eliminarCampo(boton) {

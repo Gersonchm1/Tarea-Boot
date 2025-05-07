@@ -1,4 +1,4 @@
-const url = ''
+const url = 'https://6818a2da5a4b07b9d1d017b1.mockapi.io/actor'
 const contenedor = document.querySelector('tbody')
 let resultados = ''
 let btnCrear = document.getElementById('btnCrear')
@@ -31,14 +31,16 @@ const mostrar = (articulos) => {
     articulos.forEach(articulo => {
         resultados += `
             <tr>
-                <td>${articulo.nombrePersonaje}</td>
-                <td>${articulo.nombreActor}</td>
-                <td>${articulo.edadActor}</td>
-                <td>${articulo.ubicacion}</td>
-                <td>${articulo.poster}</td>
-                <td>${articulo.fechaNacimiento}</td>
-                <td>${articulo.productora}</td>
-                <td>${articulo.trajes}</td>
+                <td>${articulo.id}</td>
+                
+                <td>${articulo.NombrePersonaje}</td>
+                <td>${articulo.NombreActor}</td>
+                <td>${articulo.EdadActor}</td>
+                <td>${articulo.Ubicacion}</td>
+                <td><img src="${articulo.Poster}" width="50" /></td>
+                <td>${articulo.FechaNacimiento}</td>
+                <td>${articulo.Productora}</td>
+                <td><img src="${articulo.Trajes}" width="50" /></td>
                 
                 <td class="text-center">
                     <a class="btnEditar btn btn-primary">Editar</a>
@@ -87,10 +89,10 @@ on (document, 'click', '.btnBorrar', e => {
     const nombreActorForm = fila.children[2].innerHTML
     const edadActorForm = fila.children[3].innerHTML
     const ubicacionForm = fila.children[4].children[0]
-    const posterForm = fila.children[5].children[0]
+    const posterForm = fila.children[5].children[0].src
     const fechaNacimientoForm = fila.children[6].children[0]
     const productoraForm = fila.children[7].children[0]
-    const trajesForm = fila.children[8].children[0]
+    const trajesForm = fila.children[8].children[0].src
     nombrePersonaje.value = nombrePersonajeForm
     nombreActor.value = nombreActorForm
     edadActor.value = edadActorForm
