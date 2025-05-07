@@ -9,7 +9,6 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
-
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
     
     <title>Fech Crud</title>
@@ -21,13 +20,14 @@
           <thead>
             <tr class="text-center">
                 <th>ID</th>
-                <th>NombrePersonaje</th>
-                <th>NombreActor</th>
-                <th>EdadActor</th>
+                <th>Nombre Personaje</th>
+                <th>Nombre Actor</th>
+                <th>Edad Actor</th>
                 <th>Ubicacion</th>
                 <th>Poster</th>
+                <th>Fecha de nacimiento</th>
                 <th>Productora</th>
-                <th>TrajesDelPersonaje</th>
+                <th>Trajes Del Personaje</th>
                 <th>Indicaciones</th>
             </tr>
         </thead>
@@ -36,51 +36,62 @@
             </tbody>
 
         </table>
-       
-
     </div>
-    
 
-<div id="modalArticulo" class="modal fade"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="nombre" class="col-form-label">Nombre:</label>
-            <input id="nombre" type="text" class="form-control" autofocus> 
-          </div>
-          <div class="mb-3">
-            <label for="edad" class="col-form-label">Edad:</label>
-            <input id="edad" type="number" class="form-control" autofocus> 
-          </div>
-          <div class="mb-3">
-            <label for="trabajo" class="col-form-label">Trabajo:</label>
-            <input id="trabajo" type="text" class="form-control" autofocus> 
-          </div>
-            <div class="mb-3">
-                <label for="avatar" class="col-form-label">Avatar(url):</label>
-                <input id="avatar" type="text" class="form-control" autofocus>
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Guardar</button>
-      </div>
-    </form>
+    <!-- Modal -->
+    <div id="modalArticulo" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Nuevo Héroe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombrePersonaje" class="col-form-label">Nombre Personaje:</label>
+                            <input id="nombrePersonaje" type="text" class="form-control" autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombreActor" class="col-form-label">Nombre Actor:</label>
+                            <input id="nombreActor" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edadActor" class="col-form-label">Edad Actor:</label>
+                            <input id="edadActor" type="number" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="ubicacion" class="col-form-label">Ubicación:</label>
+                            <input id="ubicacion" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="poster" class="col-form-label">Poster:</label>
+                            <input id="poster" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="fechaNacimiento" class="col-form-label">Fecha de Nacimiento:</label>
+                            <input id="fechaNacimiento" type="date" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="productora" class="col-form-label">Productora:</label>
+                            <input id="productora" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="trajes" class="col-form-label">Trajes:</label>
+                            <input id="trajes" type="text" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-    
 
-   
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+    <script src="./js/main2.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
-<script src="./js/main.js"></script>
 </html>

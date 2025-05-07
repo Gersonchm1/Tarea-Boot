@@ -1,21 +1,28 @@
-const url = 'https://6818a2da5a4b07b9d1d017b1.mockapi.io/actor'
+const url = ''
 const contenedor = document.querySelector('tbody')
 let resultados = ''
 let btnCrear = document.getElementById('btnCrear')
 
 const modalArticulo = new bootstrap.Modal(document.getElementById('modalArticulo'));
 const formArticulo = document.querySelector('form')
-const nombre = document.getElementById('nombre')
-const edad = document.getElementById('edad')
-const trabajo = document.getElementById('trabajo')
-const avatar = document.getElementById('avatar')
+const nombrePersonaje = document.getElementById('nombrePersonaje')
+const nombreActor = document.getElementById('nombreActor')
+const edadActor = document.getElementById('edadActor')
+const poster = document.getElementById('poster')
+const fechaNacimiento = document.getElementById('fechaNacimiento')
+const productora = document.getElementById('productora')
+const trajes = document.getElementById('trajes')
 let opcion = ''
 
 btnCrear.addEventListener('click', () => {
-    nombre.value = ''
-    edad.value = ''
-    trabajo.value = ''
-    avatar.value = ''
+    nombrePersonaje.value = ''
+    nombreActor.value = ''
+    edadActor.value = ''
+    ubicacion.value = ''
+    poster.value = ''
+    fechaNacimiento.value = ''
+    productora.value = ''
+    trajes.value = ''
     modalArticulo.show()
     opcion = 'crear'
 });
@@ -24,11 +31,15 @@ const mostrar = (articulos) => {
     articulos.forEach(articulo => {
         resultados += `
             <tr>
-                <td>${articulo.id}</td>
-                <td>${articulo.name}</td>
-                <td>${articulo.age}</td>
-                <td>${articulo.jod}</td>
-                <td><img src="${articulo.avatar}" width="50" /></td>
+                <td>${articulo.nombrePersonaje}</td>
+                <td>${articulo.nombreActor}</td>
+                <td>${articulo.edadActor}</td>
+                <td>${articulo.ubicacion}</td>
+                <td>${articulo.poster}</td>
+                <td>${articulo.fechaNacimiento}</td>
+                <td>${articulo.productora}</td>
+                <td>${articulo.trajes}</td>
+                
                 <td class="text-center">
                     <a class="btnEditar btn btn-primary">Editar</a>
                     <a class="btnBorrar btn btn-danger">Borrar</a>
@@ -72,14 +83,22 @@ on (document, 'click', '.btnBorrar', e => {
     
     const fila = e.target.parentNode.parentNode
     idForm = fila.children[0].innerHTML
-    const nombreForm = fila.children[1].innerHTML
-    const edadForm = fila.children[2].innerHTML
-    const trabajoForm = fila.children[3].innerHTML
-    const avatarForm = fila.children[4].children[0].src
-    nombre.value = nombreForm
-    edad.value = edadForm
-    trabajo.value = trabajoForm
-    avatar.value = avatarForm
+    const nombrePersonajeForm = fila.children[1].innerHTML
+    const nombreActorForm = fila.children[2].innerHTML
+    const edadActorForm = fila.children[3].innerHTML
+    const ubicacionForm = fila.children[4].children[0]
+    const posterForm = fila.children[5].children[0]
+    const fechaNacimientoForm = fila.children[6].children[0]
+    const productoraForm = fila.children[7].children[0]
+    const trajesForm = fila.children[8].children[0]
+    nombrePersonaje.value = nombrePersonajeForm
+    nombreActor.value = nombreActorForm
+    edadActor.value = edadActorForm
+    ubicacion.value = ubicacionForm
+    poster.value = posterForm
+    fechaNacimiento.value = fechaNacimientoForm
+    productora.value = productoraForm
+    trajes.value = trajesForm
     opcion = 'editar'
     modalArticulo.show()
     
@@ -94,10 +113,15 @@ on (document, 'click', '.btnBorrar', e => {
 
             },
             body: JSON.stringify({
-                name: nombre.value,
-                age: edad.value,
-                jod: trabajo.value,
-                avatar: avatar.value
+                nombrePersonaje: nombrePersonaje.value,
+                nombreActor: nombreActor.value,
+                edadActor: edadActor.value,
+                ubicacion: ubicacion.value,
+                poster: poster.value,
+                fechaNacimiento: fechaNacimiento.value,
+                productora: productora.value,
+                trajes: ubicacion.value
+                
             })
         })
         .then(response => response.json())
@@ -116,10 +140,14 @@ on (document, 'click', '.btnBorrar', e => {
 
             },
             body: JSON.stringify({
-                name: nombre.value,
-                age: edad.value,
-                jod: trabajo.value,
-                avatar: avatar.value
+                nombrePersonaje: nombrePersonaje.value,
+                nombreActor: nombreActor.value,
+                edadActor: edadActor.value,
+                ubicacion: ubicacion.value,
+                poster: poster.value,
+                fechaNacimiento: fechaNacimiento.value,
+                productora: productora.value,
+                trajes: ubicacion.value
             })
 
         })

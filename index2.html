@@ -6,89 +6,134 @@
   <title>Gestión de Héroes</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-light">
+<body >
+  <div class="container my-5 p-4 shadow">
+    <h5 class="border-bottom pb-2 mb-4">Mis Heroes</h5>
 
-<div class="container my-5 p-4 bg-white rounded shadow">
-  <h5 class="border-bottom pb-2 mb-4">Mis Heroes</h5>
-  
-  <h4 class="mb-4">Gestion de Heroes</h4>
-  
-  <form>
-    <div class="row mb-3">
-      <div class="col-md-6">
-        <label for="nombrePersonaje" class="form-label">Nombre Personaje</label>
-        <input type="text" class="form-control" id="nombrePersonaje">
-      </div>
-      <div class="col-md-6">
-        <label for="nombreActor" class="form-label">Nombre Actor</label>
-        <input type="text" class="form-control" id="nombreActor">
-      </div>
-    </div>
-    
-    <div class="row mb-3">
-      <div class="col-md-6">
-        <label for="edadActor" class="form-label">Edad Actor</label>
-        <input type="number" class="form-control" id="edadActor">
-      </div>
-      <div class="col-md-6">
-        <label for="ubicacion" class="form-label">Ubicacion</label>
-        <input type="text" class="form-control" id="ubicacion">
-        <small class="text-muted">Nombre de la ciudad de origen</small>
-      </div>
-    </div>
-    
-    <div class="row mb-3">
-      <div class="col-md-6">
-        <label for="poster" class="form-label">Poster</label>
-        <input type="text" class="form-control" id="poster">
-      </div>
-      <div class="col-md-6">
-        <label for="fechaUbicacion" class="form-label">Ubicacion</label>
-        <input type="date" class="form-control" id="fechaUbicacion">
-      </div>
-    </div>
-    
-    <div class="mb-4">
-      <label for="productora" class="form-label">Productora</label>
-      <select class="form-select" id="productora">
-        <option selected>Marvel</option>
-        <option>DComics</option>
+
+    </h5>
+    <h4 class="mb-4">Gestion de heroes
+
+    </h4>
+    <form>
+      <div class="row mb-3">
+        <div class="col mb-6">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          
+        </div>
+        <div class=col mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          
+        </div>
         
-      </select>
-    </div>
 
-    <!-- Registro de trajes oculto al inicio -->
-    <div id="registroTrajes" class="card border-primary mb-4 d-none">
-      <div class="card-header bg-white">
-        <strong>Registro de Trajes</strong>
+
       </div>
-      <div class="card-body text-primary">
-        <h5 class="card-title">Trajes del personaje</h5>
-        <p class="card-text">En esta sección podrá registrar los nombres de los trajes usados por el actor en cada una de las películas.</p>
-        <button type="button" class="btn btn-warning btn-sm">
-          <strong>+</strong>
-        </button>
+      <div class="row mb-3">
+        <div class="col mb-6">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          
+        </div>
+        <div class=col mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          
+        </div>
+        <div class="row mb-3">
+          <div class="col mb-6">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            
+          </div>
+          <div class=col mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            
+          </div>
+          
+  
+  
+        </div>
+        <div class="row mb-4">
+          <div class="col mb-6">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            
+          </div>
+          <div id="registroTrajes" class="card border-primary mb-4 d-none">
+           <div class="card-header bg-white">
+            <strong>registroTrajes</strong>
+
+           </div>
+           <div class="card-body text-primary">
+            <h5 class="card-title">trajes del perosnaje</h5>
+            <p class="card-text">en esta sesadasdasdas</p>
+            <div class="mb-4">
+              <button type="button" class="btn btn-warning btn-sm" id="btnAgregarTraje">
+                <strong>+</strong>
+              </button>
+
+            </div>
+
+           
+
+              <div id="contenedor-trajes gap-2" class="d-flex flex-column gap-3 mt-3"></div>
+
+            
+              
+                  </div>
+                </div>
+          
+          
+  
+  
+        </div>
+
+        
+
+
       </div>
-    </div>
+      <div class="d-flex gap-2">
+        <button type="button" class="btn btn-dark" id="nuevoHeroeBtn">Nuevo Heroe</button>
+        <button type="submit" class="btn btn-primary">Guardar Heroe</button>
+        <button type="submit" class="btn btn-info" id="mostrarHeroesBtn">Mostrar Heroes Actuales</button>
 
-    <!-- Botones -->
-    <div class="d-flex gap-2">
-      <button type="button" class="btn btn-dark" id="nuevoHeroeBtn">Nuevo Heroe</button>
-      <button type="submit" class="btn btn-primary">Guardar Heroe</button>
-      <button type="reset" class="btn btn-danger">Cancelar</button>
-    </div>
-  </form>
-</div>
+        <button type="reset" class="btn btn-danger">Cancelar</button>
+      </div>
 
-<script>
-  const nuevoHeroeBtn = document.getElementById('nuevoHeroeBtn');
-  const registroTrajes = document.getElementById('registroTrajes');
+    </form>
 
-  nuevoHeroeBtn.addEventListener('click', () => {
-    registroTrajes.classList.remove('d-none');
-  });
-</script>
+  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+<script>
+  // Mostrar la sección de trajes
+document.getElementById('nuevoHeroeBtn').addEventListener('click', () => {
+  document.getElementById('registroTrajes').classList.remove('d-none');
+});
+
+// Agregar nuevo campo de traje
+document.getElementById('btnAgregarTraje').addEventListener('click', () => {
+  const contenedor = document.getElementById('contenedor-trajes');
+  const grupo = document.createElement('div');
+  grupo.className = 'd-flex align-items-center gap-2 mb-3';
+  grupo.innerHTML = `
+    <input type="text" class="form-control" name="traje[]" placeholder="Nombre traje">
+    <button type="button" class="btn btn-danger">-</button>
+  `;
+  grupo.querySelector('button').addEventListener('click', () => grupo.remove());
+  contenedor.appendChild(grupo);
+});
+
+// Redirigir al hacer clic en "Mostrar Héroes"
+document.getElementById('mostrarHeroesBtn').addEventListener('click', e => {
+  e.preventDefault();
+  window.location.href = 'index3.html';
+});
+
+</script>
 </html>
