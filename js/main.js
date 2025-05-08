@@ -41,3 +41,4 @@ const nuevoHeroeBtn = document.getElementById('nuevoHeroeBtn');
     // Redirigir a index3.html
     window.location.href = 'index3.html';
   });
+  
