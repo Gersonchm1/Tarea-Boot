@@ -1,35 +1,51 @@
-let link = `https://6818a2da5a4b07b9d1d017b1.mockapi.io/actor`
-function api(){
-    axios.get(link)
-    .then((response)=>{
-        console.log(response["data"])
-    })
-}
-function añadir(NombrePersonaje,NombreActor,EdadActor,Ubicacion,Poster,FechaNacimiento,Productora,Trajes){
-    axios.post(link,{
-        "NombrePersonaje":NombrePersonaje,
-        "NombreActor":NombreActor,
-        "EdadActor":EdadActor,
-        "Ubicacion":Ubicacion,
-        "Poster":Poster,
-        "FechaNacimiento":FechaNacimiento,
-        "Productora":Productora,
-        "Trajes":Trajes
- 
-    })
-}
-api()
-document.getElementById("Guardar").addEventListener("click", function(e){
-    e.preventDefault();
+async function agregarHeroe(hero) {
+    try {
+        
+        const response = await fetch('https://6818a2da5a4b07b9d1d017b1.mockapi.io/actor', {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(hero), 
+        });
 
-    let NombrePersonaje = document.getElementById("nombrePersonaje").value
-    let NombreActor = document.getElementById("nombreActor").value
-    let EdadActor = document.getElementById("edadActor").value
-    let Ubicacion = document.getElementById("ubicacion").value
-    let Poster = document.getElementById("poster").value
-    let FechaNacimiento = document.getElementById("fechaNacimiento").value
-    let Productora = document.getElementById("productora").value
-    let Trajes = document.getElementById("N/n").value
+        if (!response.ok) {
+            throw new Error('Error al agregar el superhéroe');
+        }
 
-    añadir(NombrePersonaje,NombreActor,EdadActor,Ubicacion,Poster,FechaNacimiento,Productora,Trajes)
-})
+        const heroAdded = await response.json();
+        mostrarHeroes(heroAdded);
+        alert('Superhéroe agregado exitosamente');
+
+    } catch (error) {
+        console.error('Error al agregar el héroe:', error);
+        alert('Hubo un error al agregar el superhéroe');
+    }
+}
+document.getElementById('hero-form').addEventListener('submit',function(event){
+    event.preventDefault();
+    const nombrePersonaje =document.getElementById('nombrePersonaje').value;
+    const nombreActor =document.getElementById('nombreActor').value;
+    const edadActor =document.getElementById('edadActor').value;
+    const ubicacion =document.getElementById('ubicacion').value;
+    const poster =document.getElementById('poster').value;
+    const fechaNacimiento =document.getElementById('fechaNacimiento').value;
+    const productora =document.getElementById('productora').value;
+    
+    const nuevoHeroe={
+        NombrePersonaje: nombrePersonaje,
+        NombreActor: nombreActor,
+        EdadActor: edadActor,
+        Ubicacion: ubicacion,
+        Poster: poster,
+        AñoNacimiento: fechaNacimiento,
+        Productora: productora,
+       
+
+    };
+    agregarHeroe(nuevoHeroe);
+    document.getElementById('hero-form').reset();
+    
+
+
+});
